@@ -1,0 +1,16 @@
+{
+  "name": "puppeteer-demos",
+  "version": "1.0.0",
+  "repository": "https://github.com/iafine/puppeteer-demos.git",
+  "author": "iafine <iafineden@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/puppeteer": "^2.0.0",
+    "axios": "^0.19.0",
+    "puppeteer": "^2.0.0",
+    "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "ts-node": "^8.5.4"
+  }
+}
