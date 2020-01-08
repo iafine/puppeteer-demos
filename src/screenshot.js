@@ -13,7 +13,7 @@ const devices = require('puppeteer/DeviceDescriptors');
   await browser.close();
 })();
 
-// 截屏iphoneX上显示的百度网站
+// // 截屏iphoneX上显示的百度网站
 (async() => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -23,19 +23,23 @@ const devices = require('puppeteer/DeviceDescriptors');
   await browser.close();
 })();
 
-// 有头模式截屏百度网站
-(async() => {
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-  await page.goto('https://www.baidu.com/');
-  await page.setViewport({ width: 2048, height: 1152});
-  await page.screenshot({path: 'assets/baidu-header-2048-1152.png', fullPage: true});
-  await browser.close();
-})();
+// // 有头模式截屏百度网站
+// (async() => {
+//   const browser = await puppeteer.launch({ headless: false });
+//   const page = await browser.newPage();
+//   await page.goto('https://www.baidu.com/');
+//   await page.setViewport({ width: 2048, height: 1152});
+//   await page.screenshot({path: 'assets/baidu-header-2048-1152.png', fullPage: true});
+//   await browser.close();
+// })();
 
 // 截屏本地chrome上的百度网站
 (async() => {
-  const browser = await puppeteer.launch({ headless: false, executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' });
+  const browser = await puppeteer.launch({ 
+    headless: false, 
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    userDataDir: '/Users/harlan/Library/Application Support/Google/Chrome/Default',
+  });
   const page = await browser.newPage();
   await page.goto('https://www.baidu.com/');
   await page.setViewport({ width: 2048, height: 1152});
